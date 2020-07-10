@@ -1,0 +1,5 @@
+form {
+  .form-group + .form-group {
+    margin-top: rem-calc(16);
+  }
+}

@@ -1,0 +1,130 @@
+<div class="auth">
+  <div class="auth__background">
+    <img
+      src="../../assets/images/assorted-wine-bottles-1283219.jpg"
+      alt="Liquor Store background"
+    />
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="card__tabs">
+        <label class="card__tab">
+          <input
+            type="radio"
+            name="auth-form-tab"
+            value="signin"
+            checked
+            (change)="handleTabChange($event)"
+          />
+          <p [class]="activeTab === 'signin' ? 'color-black' : 'color-gray500'">
+            Sign In
+          </p>
+        </label>
+        <label class="card__tab">
+          <input
+            type="radio"
+            name="auth-form-tab"
+            value="signup"
+            (change)="handleTabChange($event)"
+          />
+          <p [class]="activeTab === 'signup' ? 'color-black' : 'color-gray500'">
+            Sign Up
+          </p>
+        </label>
+      </div>
+      <form
+        name="signin-form"
+        class="signin-form"
+        (submit)="handleSignin($event)"
+        *ngIf="activeTab === 'signin'"
+      >
+        <div class="form-group">
+          <label>
+            <p>Email</p>
+            <input
+              class="block"
+              [(ngModel)]="signinForm.email"
+              type="email"
+              name="email"
+            />
+            <small *ngIf="signinForm.errors.email">{{
+              signinForm.errors.email
+            }}</small>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <p>Password</p>
+            <input
+              class="block"
+              [(ngModel)]="signinForm.password"
+              type="password"
+              name="password"
+            />
+            <small *ngIf="signinForm.errors.password">{{
+              signinForm.errors.password
+            }}</small>
+          </label>
+        </div>
+        <div class="form-group">
+          <button class="button block" type="submit">Login</button>
+        </div>
+      </form>
+      <form
+        name="signup-form"
+        class="signup-form"
+        (submit)="handleSignup($event)"
+        *ngIf="activeTab === 'signup'"
+      >
+        <div class="form-group">
+          <label>
+            <p>Email</p>
+            <input
+              class="block"
+              [(ngModel)]="signupForm.email"
+              type="email"
+              name="email"
+            />
+            <small *ngIf="signupForm.errors.email">{{
+              signupForm.errors.email
+            }}</small>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <p>Password</p>
+            <input
+              class="block"
+              [(ngModel)]="signupForm.password"
+              type="password"
+              name="password"
+            />
+            <small *ngIf="signupForm.errors.password">{{
+              signupForm.errors.password
+            }}</small>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <p>Confirm Password</p>
+            <input
+              class="block"
+              [(ngModel)]="signupForm.confirmPassword"
+              type="password"
+              name="confirm-password"
+            />
+            <small *ngIf="signupForm.errors.confirmPassword">{{
+              signupForm.errors.confirmPassword
+            }}</small>
+          </label>
+        </div>
+        <div class="form-group">
+          <button class="button block" type="submit">Sign Up</button>
+        </div>
+      </form>
+      <div>
+        <small>Forgot Password?</small>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.button {
+  border: none;
+  font-size: inherit;
+  background-color: color(primary);
+  letter-spacing: rem-calc(1.25);
+  padding: rem-calc(8) rem-calc(36);
+  min-height: rem-calc(40);
+  text-transform: uppercase;
+}

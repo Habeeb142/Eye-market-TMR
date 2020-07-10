@@ -1,0 +1,75 @@
+@import "../../assets/scss/config.scss";
+@import "../../assets/scss/abstract/rem-calc";
+@import "../../assets/scss/abstract/colors";
+
+.auth {
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      background: -webkit-linear-gradient(to right, #434343, #000000);
+      background: linear-gradient(to right, rgba(black, 0.5), rgba(black, 0.5));
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card {
+    margin-top: rem-calc(64);
+    overflow: hidden;
+    padding: rem-calc(36) rem-calc(24);
+    background-color: white;
+
+    .card__tabs {
+      display: flex;
+      margin-bottom: rem-calc(36);
+
+      .card__tab {
+        flex: 1 1 auto;
+        // width: 50%;
+        padding: 0;
+        text-transform: capitalize;
+        cursor: pointer;
+        background: transparent;
+        p {
+          font-size: rem-calc(24);
+          font-weight: 600;
+          transition: 0.3s ease-in-out;
+        }
+
+        &:hover p {
+          color: color(gray700);
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+      }
+    }
+  }
+
+  form {
+    label p {
+      color: color(gray700);
+      margin: 0;
+      margin-bottom: rem-calc(4);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  max-width: rem-calc($max-page-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem-calc($gutter);
+  padding-right: rem-calc($gutter);
+}

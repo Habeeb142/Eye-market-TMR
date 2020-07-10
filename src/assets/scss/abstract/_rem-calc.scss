@@ -1,0 +1,9 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($size) {
+  $base: strip-unit($body-font-size);
+  $remSize: $size / $base;
+  @return #{$remSize}rem;
+}
