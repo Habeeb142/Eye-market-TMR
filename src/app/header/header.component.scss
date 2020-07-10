@@ -1,0 +1,13 @@
+@import "../../assets/scss/config.scss";
+@import "../../assets/scss/abstract/rem-calc";
+@import "../../assets/scss/abstract/colors";
+
+.header {
+  background-color: color(primary);
+  color: white;
+  padding: rem-calc(12) 0;
+
+  &__title {
+    font-size: rem-calc(18);
+  }
+}
